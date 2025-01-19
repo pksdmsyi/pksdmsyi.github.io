@@ -6,6 +6,73 @@
     <title>Ojas Natu - Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <style>
+        /* Timeline Container */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* The timeline line */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #4A90E2;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Timeline items */
+        .timeline-item {
+            padding: 10px 20px;
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        /* Timeline item dot */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: #4A90E2;
+            border-radius: 50%;
+            left: 50%;
+            top: 10px;
+            transform: translateX(-50%);
+            border: 4px solid white;
+            z-index: 1;
+        }
+
+        /* Left and Right Alignments */
+        .timeline-item.left {
+            left: -50%;
+            transform: translateX(-100%);
+        }
+
+        .timeline-item.right {
+            left: 50%;
+            transform: translateX(100%);
+        }
+
+        .timeline-item .date {
+            font-weight: bold;
+            color: #4A90E2;
+        }
+
+        .timeline-item .content {
+            margin-top: 10px;
+            color: #333;
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
@@ -14,31 +81,47 @@
             <a href="#" class="text-xl font-bold">Ojas Natu</a>
             <div class="hidden md:flex space-x-6">
                 <a href="#about" class="hover:text-blue-400">About</a>
-                <a href="#research" class="hover:text-blue-400">Research</a>
-                <a href="#projects" class="hover:text-blue-400">Projects</a>
-                <a href="#achievements" class="hover:text-blue-400">Achievements</a>
+                <a href="#academics" class="hover:text-blue-400">Academics</a>
+                <a href="#experience" class="hover:text-blue-400">Professional Experience</a>
+                <a href="#projects" class="hover:text-blue-400">Featured Projects</a>
+                <a href="#music" class="hover:text-blue-400">Music</a>
+                <a href="#sports" class="hover:text-blue-400">Sports</a>
                 <a href="#contact" class="hover:text-blue-400">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-
     <header class="pt-32 pb-16 bg-gradient-to-r from-blue-900 to-purple-900 text-white">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center md:items-start">
-            <img src="profile.jpg" alt="Ojas Natu" class="w-40 h-40 rounded-full mb-8 md:mb-0 md:mr-8 border-4 border-white object-cover">
+            <img src="profile.jpg" alt="Ojas Natu" class="w-64 h-64 rounded-full mb-8 md:mb-0 md:mr-8 border-4 border-white object-cover">
             <div class="text-center md:text-left">
                 <h1 class="text-4xl md:text-6xl font-bold mb-4">Ojas Natu</h1>
-                <p class="text-xl mb-8">Graduate Student | Research Assistant | Tabla | Badminton</p>
+                <p class="text-xl mb-8">Computer Science Graduate | Research Assistant | Tabla | Badminton</p>
                 <div class="flex justify-center md:justify-start space-x-4">
-                    <a href="https://linkedin.com/in/ojas-natu" class="bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700">LinkedIn</a>
-                    <a href="https://github.com/pksdmsyi" class="bg-gray-700 px-6 py-2 rounded-full hover:bg-gray-800">GitHub</a>
-                    <a href="https://drive.google.com/file/d/1Hy3ZSykeaoAfSPUraLYeP_SO5Q6En5I9/view" class="bg-green-600 px-6 py-2 rounded-full hover:bg-green-700">Resume</a>
+                    <a href="https://linkedin.com/in/ojas-natu" target="_blank" rel="noopener noreferrer" class="bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700">LinkedIn</a>
+                    <a href="https://github.com/pksdmsyi" target="_blank" rel="noopener noreferrer" class="bg-gray-700 px-6 py-2 rounded-full hover:bg-gray-800">GitHub</a>
+                    <a href="https://drive.google.com/file/d/1Hy3ZSykeaoAfSPUraLYeP_SO5Q6En5I9/view" target="_blank" rel="noopener noreferrer" class="bg-green-600 px-6 py-2 rounded-full hover:bg-green-700">Resume</a>
                 </div>
             </div>
         </div>
     </header>
-    
+<!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+            <div class="max-w-3xl mx-auto text-lg leading-relaxed">
+                <p class="mb-6">
+                    Currently pursuing my Master's in Computer Science at Stony Brook University with a perfect GPA of 3.96/4.0. 
+                    My research focuses on distributed systems, computer vision, and quantum computing.
+                </p>
+                <p>
+                    Beyond academics, I'm an accomplished Tabla player with an Alankar Purna degree and a competitive badminton player 
+                    with recent victories in international tournaments.
+                </p>
+            </div>
+        </div>
+    </section>
 
     <!-- About Section -->
     <section id="about" class="py-20">
@@ -56,25 +139,54 @@
             </div>
         </div>
     </section>
-
-    <!-- Research Section -->
-    <section id="research" class="py-20 bg-gray-100">
+    
+    <!-- Academics Section -->
+    <section id="academics" class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Research Work</h2>
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-4">Multi-Agent Systems</h3>
-                    <p>Developing advanced flight formation systems using ML-based control and distributed system architectures.</p>
+            <h2 class="text-3xl font-bold text-center mb-12">Academics</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="date">2019 - Present</div>
+                    <div class="content">
+                        <h3 class="text-xl font-bold mb-4">Master's in Computer Science | Stony Brook University</h3>
+                        <p>Focusing on distributed systems, machine learning, and quantum computing.</p>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-4">Parallel Computing</h3>
-                    <p>Building high-performance architectures achieving 6x throughput on multi-core systems.</p>
+                <div class="timeline-item right">
+                    <div class="date">2015 - 2019</div>
+                    <div class="content">
+                        <h3 class="text-xl font-bold mb-4">Bachelor's in Computer Science | XYZ University</h3>
+                        <p>Graduated with First-Class Honors, specializing in software engineering.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Professional Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="date">2022 - Present</div>
+                    <div class="content">
+                        <h3 class="text-xl font-bold mb-4">Research Assistant | Stony Brook University</h3>
+                        <p>Developing algorithms for distributed computing and AI-powered systems in healthcare.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="date">2021 - 2022</div>
+                    <div class="content">
+                        <h3 class="text-xl font-bold mb-4">Software Engineer Intern | ABC Technologies</h3>
+                        <p>Worked on building microservices and optimizing databases for e-commerce.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
     <section id="projects" class="py-20">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
@@ -93,18 +205,27 @@
         </div>
     </section>
 
-    <!-- Achievements Section -->
-    <section id="achievements" class="py-20 bg-gray-100">
+    <!-- Music Section -->
+    <section id="music" class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Achievements</h2>
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Music</h2>
+            <div class="grid md:grid-cols-1 gap-8 max-w-4xl mx-auto">
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-4">Music</h3>
-                    <p>Alankar Purna in Tabla (Master's equivalent) from ABGMV, India. Active performer in classical Indian music.</p>
+                    <h3 class="text-xl font-bold mb-4">Alankar Purna in Tabla</h3>
+                    <p>Master's equivalent certification in Tabla from ABGMV, India. Active performer in classical Indian music.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sports Section -->
+    <section id="sports" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Sports</h2>
+            <div class="grid md:grid-cols-1 gap-8 max-w-4xl mx-auto">
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-4">Sports</h3>
-                    <p>Winner of 2024 RIAAN Open and IBC Open International Badminton Tournaments in Men's Singles category.</p>
+                    <h3 class="text-xl font-bold mb-4">Badminton</h3>
+                    <p>Winner of the 2024 RIAAN Open and IBC Open International Badminton Tournaments in Men's Singles category.</p>
                 </div>
             </div>
         </div>
@@ -132,7 +253,7 @@
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-8">
         <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2024 Ojas Natu. All rights reserved.</p>
+            <p>&copy; 2025 Ojas Natu. All rights reserved.</p>
         </div>
     </footer>
 </body>
