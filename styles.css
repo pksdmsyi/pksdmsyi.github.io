@@ -1,0 +1,41 @@
+/* Updated Timeline Line Positioning */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #4A90E2;
+    top: 0;
+    bottom: 0;
+    left: 20%; /* Adjusted to position on the left */
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.timeline-item .date {
+    width: 20%; /* Matches left-side space */
+    text-align: right;
+    padding-right: 15px;
+    font-weight: bold;
+    color: #4A90E2;
+}
+
+.timeline-item .content {
+    width: 75%; /* Increased space for right-side content */
+    padding-left: 15px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
